@@ -1,0 +1,12 @@
+{
+  "name": "inf-133-productivity-tracker",
+  "version": "1.0.0",
+  "description": "A web app that facilitates productivity and allows students to organize their daily schedules and academic goals with customizable features such as calendars, to-do lists, and timers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
