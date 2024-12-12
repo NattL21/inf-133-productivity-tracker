@@ -3,9 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css" />
+    
     <title>Homepage</title>
 </head>
 <body>
-    
+    <!-- WEBSITE TITLE -->
+    <div id="title">
+        <h1>Productivity Tracker</h1>
+        <img src="assets/smiski.png">
+    </div>
+    <nav>
+        <!-- FUNCTIONALITY BUTTONS -->
+        <button onclick="openToDo();">To-Do List</button>
+        <button onclick="openPomodoro();">Pomodoro</button>
+        <button onclick="openCalendar();">Calendar</button>
+        <button onclick="openQuotes();">Quotes</button>
+    </nav>
+
+    <!-- DIVS TO UPDATE -->
+     <div id="layout">
+        <div id="todolist">
+            <h1>To Do List</h1>
+            <label for="userInput"> What's there to do?</label><br>
+            <input type="text" id="userInput"><br>
+            <label for="userDate">When's it due?</label><br>
+            <input type="date" id="userDate"><br>
+            <span id="addButton" onclick="addItem()" class="addButton">Add</span>
+
+            <ul id="todoList"></ul>
+        </div>
+
+        <div id="pomodoro">
+            <h1>Pomodoro Timer</h1>
+            <!-- TIMER SELECTION - OR CUSTOM -->
+            <h2>How long would you like your timer to be?</h2>
+            <button type="button" onclick="changeInput(30);" id="30minButton">
+                30 MIN
+            </button>
+            <button type="button" onclick="changeInput(45);" id="45minButton">
+                45 MIN
+            </button>
+            <button type="button" onclick="changeInput(60);" id="1hrButton">
+                1 HOUR
+            </button>
+            <button type="button" onclick="customTime();"id="customButton">
+                Custom
+            </button>
+            <h1 id="timeDisplay"></h1>
+            <br>
+
+            <!-- START PAUSE AND RESET BUTTONS -->
+             <div id="timeButton">
+                <input type="number" step="5" min="5" id="timeInput" placeholder="Enter # of minutes..." />
+                <button type="button" onclick="start();" id="goButton">
+                    Start
+                </button>
+                <button type="button" onclick="pause();" id="pauseButton">
+                    Pause
+                </button>
+                <button type="button" onclick="reset();" id="resetButton">
+                    Reset
+                </button>
+            </div>
+        </div>
+
+        <div id="calendar">
+            <div id="calendar-container">
+                <div id="calendar-header">
+                    <button id="prev-month" onclick="changeMonth(-1)">&#10094;</button>
+                    <div id="month-year"></div>
+                    <button id="next-month" onclick="changeMonth(1)">&#10095;</button>
+                </div>
+                <div id="daysOfWeek">
+                    <div class="day">Sun</div>
+                    <div class="day">Mon</div>
+                    <div class="day">Tue</div>
+                    <div class="day">Wed</div>
+                    <div class="day">Thu</div>
+                    <div class="day">Fri</div>
+                    <div class="day">Sat</div>
+                </div>
+                <div id="days"></div>
+                
+                <!-- events -->
+                <div id="events" class="events" style="display: none;">
+                    <div class="eventsContent">
+                        <h3>Add Event</h3>
+                        <textarea id="eventText" placeholder="Enter event details!"></textarea>
+                        <button id="saveEvent">Save Event</button>
+                        <button id="closeEvent">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="quotes">
+            <h1>.₊⊹.⟡ ݁ .⊹₊ ݁.</h1>
+            <div id="quote" class="quote">
+                <p>Generate a Quote!</p>
+            </div>
+            <button id="newQuote">New Quote!</button>
+        </div>
+    </div>
+
+     <script src="components/script.js"></script>
 </body>
 </html>
